@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP - JS</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Ejercicio 1</h1>
+            <p style="font-size: 14px;">Ingresar tres valores e indicar cual es el mayor y cual el menor.</p>
+
+            <div>
+                <label for="ej1-numero1">
+                    Numero 1:
+                </label>
+                <input type="number" id="ej1-numero1">
+
+
+                <label for="ej1-numero2">
+                    Numero 2:
+                </label>
+                <input type="number" id="ej1-numero2">
+
+
+                <label for="ej1-numero3">
+                    Numero 3:
+                </label>
+                <input type="number" id="ej1-numero3">
+
+                <button type="button" onclick="compararEjercicio1()">Comparar</button>
+
+                <p>EL numero mayor es: <span id="resultadoMayor">0</span></p>
+                <p>EL numero menor es: <span id="resultadoMenor">0</span></p>
+            </div>
+        </div>
+
+
+        <div>
+            <h1>Ejercicio 2</h1>
+            <p>Ingresar dos valores, sumarlos y mostrar el resultado en un tercer input.</p>
+
+            <label for="ej2_num1">Numero 1:</label>
+            <input type="number" id="ej2_num1">
+            <label for="ej2_num2">Numero 2:</label>
+            <input type="number" id="ej2_num2">
+            <button onclick="sumarEjercio2()">Sumar!</button>
+            <label for="resultado_ejer2">Resultado</label>
+            <input type="text" id="resultado_ejer2">
+        </div>
+
+        <div>
+            <h1>Ejercicio 3</h1>
+            <p>Ingresar una palabra y un numero "n". Repetir la palabra "n" veces.</p>
+
+            <label for="ej3_palabra">Ingrese una palabra</label>
+            <input type="text" id="ej3_palabra">
+
+            <label for="ej3_num1">Ingrese las veces que desea repetir</label>
+            <input type="number" id="ej3_num1">
+
+            <button onclick="repetirEjer3()">Repetir</button>
+            <p id="resultado_ejer3"></p>
+        </div>
+
+        <div>
+            <h1>Ejercicio 4</h1>
+            <p>Realizar un conversor de temperatura: de grados centígrados a Celsius y viceversa. Deberá tener dos input y un botón.</p>
+
+            <label for="ej4_celsius">Grados celsius</label>
+            <input type="number" id="ej4_celsius">
+
+            <label for="ej4_fahrenheit">Grados fahrenheit</label>
+            <input type="number"  id="ej4_fahrenheit">
+            
+            <button onclick="convertirEjer4()">Convertir</button>
+            
+            <p id="resultado_ej4"></p>
+        </div>
+
+        <div>
+            <h1>Ejercio 5</h1>
+            <p>Ingresar una palabra y mostrar: <PALABRA> tiene <n> letras.
+            </p>
+            <label for="ej5_palabra">Ingrese una palabra</label>
+            <input type="text" id="ej5_palabra">
+
+            <p >La palabra tiene: <span id="resultado_ej5"></span> </p>
+
+            <button onclick="calcularEjercio5()">Calcular</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // Ejercicio 1: Compara entre 3 numero y determina cual es mayor y cual es menor
+        const compararEjercicio1 = () => {
+            const num1 = document.getElementById('ej1-numero1').value * 1;
+            const num2 = document.getElementById('ej1-numero2').value * 1;
+            const num3 = document.getElementById('ej1-numero3').value * 1;
+            const resultadoMayor = document.getElementById("resultadoMayor");
+
+            const resultadoMenor = document.getElementById("resultadoMenor")
+
+            if (num1 > num2 && num1 > num3) {
+                resultadoMayor.textContent = num1
+                console.log(typeof num1)
+            }
+            if (num2 > num1 && num2 > num3) {
+                resultadoMayor.textContent = num2
+                console.log(typeof num2)
+            }
+            if (num3 > num1 && num3 > num2) {
+                resultadoMayor.textContent = num3
+                console.log(typeof num3)
+            }
+
+            if (num1 < num2 && num1 < num3) {
+                resultadoMenor.textContent = num1
+                console.log(typeof num1)
+            }
+            if (num2 < num1 && num2 < num3) {
+                resultadoMenor.textContent = num2
+                console.log(typeof num2)
+            }
+            if (num3 < num1 && num3 < num2) {
+                resultadoMenor.textContent = num3
+                console.log(typeof num3)
+            }
+        }
+
+        // Ejercicio 2: Suma los 2 numeros
+        const sumarEjercio2 = () => {
+                const num1 = document.getElementById("ej2_num1").value * 1;
+                const num2 = document.getElementById("ej2_num2").value * 1;
+
+                const resultadoEjer2 = document.getElementById("resultado_ejer2");
+
+                resultadoEjer2.value = num1 + num2;
+        }
+
+        // Ejercicio 3: repite "x" veces la palabra q se le indique
+        const repetirEjer3 = ()=>{
+            const palabra = document.getElementById('ej3_palabra').value;
+            const num1 = document.getElementById('ej3_num1').value;
+            const resultadoEjer3 = document.getElementById('resultado_ejer3');
+
+            for(let i = 0; i < num1; i++){
+                resultadoEjer3.textContent = resultadoEjer3.innerHTML + `${i + 1}- ${palabra} `
+            }
+        }
+
+        const convertirEjer4 = () => {
+            const cel = document.getElementById('ej4_celsius').value;
+            const fah = document.getElementById('ej4_fahrenheit').value;
+            const resultadoHTML = document.getElementById('resultado_ej4');
+            let res = 0;
+
+            if(cel != 0 && cel != '' && fah === 0 || fah === '') {
+                res = (cel * (9/5) + 32);
+                resultadoHTML.textContent = `Los grados celsius (${cel}°C) a fahrenheit son: ${res}`
+            }
+
+            if(fah != 0 && fah != '' && cel === 0 || cel === ''){
+                res = (fah -32) / 1.8;
+                resultadoHTML.textContent = `Los grados fahrenheit (${fah}°F) a celsius son: ${res}`
+            }            
+        }
+        
+        const calcularEjercio5 = ()=>{
+            const resultado = document.getElementById('resultado_ej5');
+            resultado.textContent = document.getElementById('ej5_palabra').value.length
+        }
+    </script>
+    <!-- <script src="index.js"></script> -->
+</body>
+
+</html>
