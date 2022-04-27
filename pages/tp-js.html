@@ -70,29 +70,66 @@
 
         <div>
             <h1>Ejercicio 4</h1>
-            <p>Realizar un conversor de temperatura: de grados centígrados a Celsius y viceversa. Deberá tener dos input y un botón.</p>
+            <p>Realizar un conversor de temperatura: de grados centígrados a Celsius y viceversa. Deberá tener dos input
+                y un botón.</p>
 
             <label for="ej4_celsius">Grados celsius</label>
             <input type="number" id="ej4_celsius">
 
             <label for="ej4_fahrenheit">Grados fahrenheit</label>
-            <input type="number"  id="ej4_fahrenheit">
-            
+            <input type="number" id="ej4_fahrenheit">
+
             <button onclick="convertirEjer4()">Convertir</button>
-            
+
             <p id="resultado_ej4"></p>
         </div>
 
         <div>
             <h1>Ejercio 5</h1>
-            <p>Ingresar una palabra y mostrar: <PALABRA> tiene <n> letras.
+            <p>Ingresar una palabra y mostrar: PALABRA tiene "N" letras.
             </p>
             <label for="ej5_palabra">Ingrese una palabra</label>
             <input type="text" id="ej5_palabra">
 
-            <p >La palabra tiene: <span id="resultado_ej5"></span> </p>
+            <p id="resultado_ej5"> </p>
 
             <button onclick="calcularEjercio5()">Calcular</button>
+        </div>
+
+        <div>
+            <h1>Ejercicio 6</h1>
+            <p>Ingresar un número e indicar si es par.</p>
+
+            <label for="ej6_num1">Ingrese un numero:</label>
+            <input type="number" id="ej6_num1">
+
+            <button onclick="verificarEjercicio6()">Verificar</button>
+            <p id="resultado_ej6"> </p>
+
+        </div>
+
+        <div>
+            <h1>Ejercicio 7</h1>
+            <p>
+                Ingresar dos números y mostrar los múltiplos de 3 comprendidos entre ambos.
+            </p>
+            <label for="ej7_num1">Numero 1: </label>
+            <input type="number" id="ej7_num1">
+            <label for="ej7_num2">Numero 2: </label>
+            <input type="number" id="ej7_num2">
+
+            <button onclick="multiplosEjercicio7()">Verificar</button>
+            <p id="resultado_ej7"></p>
+
+        </div>
+
+        <div>
+            <h1>Ejercicio 8</h1>
+            <p>Mostrar los números primos hasta un número ingresado por el usuario.</p>
+
+            <label for="ej8_num1">Numero 1: </label>
+            <input type="number" id="ej8_num1">
+
         </div>
     </div>
 
@@ -138,45 +175,78 @@
 
         // Ejercicio 2: Suma los 2 numeros
         const sumarEjercio2 = () => {
-                const num1 = document.getElementById("ej2_num1").value * 1;
-                const num2 = document.getElementById("ej2_num2").value * 1;
+            const num1 = document.getElementById("ej2_num1").value * 1;
+            const num2 = document.getElementById("ej2_num2").value * 1;
 
-                const resultadoEjer2 = document.getElementById("resultado_ejer2");
+            const resultadoEjer2 = document.getElementById("resultado_ejer2");
 
-                resultadoEjer2.value = num1 + num2;
+            resultadoEjer2.value = num1 + num2;
         }
 
         // Ejercicio 3: repite "x" veces la palabra q se le indique
-        const repetirEjer3 = ()=>{
+        const repetirEjer3 = () => {
             const palabra = document.getElementById('ej3_palabra').value;
             const num1 = document.getElementById('ej3_num1').value;
             const resultadoEjer3 = document.getElementById('resultado_ejer3');
 
-            for(let i = 0; i < num1; i++){
+            for (let i = 0; i < num1; i++) {
                 resultadoEjer3.textContent = resultadoEjer3.innerHTML + `${i + 1}- ${palabra} `
             }
         }
 
+        // Ejercicio 4: Convierte grados o otra unidad de grado
         const convertirEjer4 = () => {
             const cel = document.getElementById('ej4_celsius').value;
             const fah = document.getElementById('ej4_fahrenheit').value;
             const resultadoHTML = document.getElementById('resultado_ej4');
             let res = 0;
 
-            if(cel != 0 && cel != '' && fah === 0 || fah === '') {
-                res = (cel * (9/5) + 32);
+            if (cel != 0 && cel != '' && fah === 0 || fah === '') {
+                //Fomula para convertir celsius a fahrenheit
+                res = (cel * (9 / 5) + 32);
                 resultadoHTML.textContent = `Los grados celsius (${cel}°C) a fahrenheit son: ${res}`
             }
 
-            if(fah != 0 && fah != '' && cel === 0 || cel === ''){
-                res = (fah -32) / 1.8;
+            if (fah != 0 && fah != '' && cel === 0 || cel === '') {
+                //Fomula para convertir  fahrenheit a celsius
+                res = (fah - 32) / 1.8;
                 resultadoHTML.textContent = `Los grados fahrenheit (${fah}°F) a celsius son: ${res}`
-            }            
+            }
         }
-        
-        const calcularEjercio5 = ()=>{
+
+        //Ejercicio 5: cuenta cuantas letras tiene la palabra
+        const calcularEjercio5 = () => {
             const resultado = document.getElementById('resultado_ej5');
-            resultado.textContent = document.getElementById('ej5_palabra').value.length
+            const palabra = document.getElementById('ej5_palabra').value
+            resultado.textContent = `${palabra} tiene ${palabra.length} letras`
+        }
+
+        //Ejercicio 6: verificar si el numero ingresado es par o impar
+        const verificarEjercicio6 = () => {
+            const resultado = document.getElementById('resultado_ej6');
+            const num1 = document.getElementById('ej6_num1').value * 1;
+            const dato = num1 % 2;
+
+            if (dato === 0) {
+                resultado.textContent = `El numero ${num1} es PAR`
+            } else {
+                resultado.textContent = `El numero ${num1} es IMPAR`
+            }
+        }
+
+        const multiplosEjercicio7 = ()=>{
+            const num1 = document.getElementById('ej7_num1').value * 1;
+            const num2 = document.getElementById('ej7_num2').value * 1;
+            const resultado = document.getElementById('resultado_ej7');
+             
+            let dato1 = num1 % 3 , dato2 = num2 % 3
+
+            if(dato1 == 0 && dato2 == 0){
+                resultado.textContent = `El numero ${num1} y el numero ${num2}, son multiplos de 3`
+            }else{
+                resultado.textContent = `El numero ${num1} y el numero ${num2}, no son multiplos de 3`
+            }
+            
         }
     </script>
     <!-- <script src="index.js"></script> -->
