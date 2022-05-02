@@ -240,7 +240,6 @@
             const fah = document.getElementById('ej4_fahrenheit').value;
             const resultadoHTML = document.getElementById('resultado_ej4');
             let res = 0;
-
             if (cel != 0 && cel != '' && fah === 0 || fah === '') {
                 //Fomula para convertir celsius a fahrenheit
                 res = (cel * (9 / 5) + 32);
@@ -309,7 +308,7 @@
             const num1 = document.getElementById('ej8_num1').value * 1;
             const resultado = document.getElementById('resultado_ej8');
             resultado.textContent = '';
-            
+
             const esPrimo = (num) => {
                 for (let i = 2; i < num; i++) {
                     if (num % i === 0) {
