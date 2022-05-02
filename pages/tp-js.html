@@ -217,7 +217,7 @@
         //Ejercicio 5: cuenta cuantas letras tiene la palabra
         const calcularEjercio5 = () => {
             const resultado = document.getElementById('resultado_ej5');
-            const palabra = document.getElementById('ej5_palabra').value
+            const palabra = document.getElementById('ej5_palabra').value;
             resultado.textContent = `${palabra} tiene ${palabra.length} letras`
         }
 
@@ -233,20 +233,35 @@
                 resultado.textContent = `El numero ${num1} es IMPAR`
             }
         }
-
+        //Ejercicio 7: Ingresar dos números y mostrar los múltiplos de 3 comprendidos entre ambos.
         const multiplosEjercicio7 = ()=>{
             const num1 = document.getElementById('ej7_num1').value * 1;
             const num2 = document.getElementById('ej7_num2').value * 1;
             const resultado = document.getElementById('resultado_ej7');
-             
-            let dato1 = num1 % 3 , dato2 = num2 % 3
-
-            if(dato1 == 0 && dato2 == 0){
-                resultado.textContent = `El numero ${num1} y el numero ${num2}, son multiplos de 3`
-            }else{
-                resultado.textContent = `El numero ${num1} y el numero ${num2}, no son multiplos de 3`
-            }
             
+            let mayor, menor;
+
+            // let dato1 = num1 % 3 , dato2 = num2 % 3
+            // if(dato1 == 0 && dato2 == 0){
+            //     resultado.textContent = `El numero ${num1} y el numero ${num2}, son multiplos de 3`
+            // }else{
+            //     resultado.textContent = `El numero ${num1} y el numero ${num2}, no son multiplos de 3`
+            // }
+
+            if(num1 > num2) {
+                mayor = num1;
+                menor = num2;
+            }else{
+                mayor = num2;
+                menor = num1;
+            }
+            while(menor <= mayor){
+                let calculo = menor % 3;
+                if(calculo === 0){
+                    resultado.textContent = resultado.innerHTML + '/n ' + menor; 
+                }
+                menor++;
+            }
         }
     </script>
     <!-- <script src="index.js"></script> -->
