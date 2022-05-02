@@ -128,7 +128,7 @@
             <p>Mostrar los números primos hasta un número ingresado por el usuario.</p>
 
             <label for="ej8_num1">Numero 1: </label>
-            <input type="number" id="ej8_num1">
+            <input type="number" id="ej8_num1" value="10">
             <button onclick="primosEjercicio8()">Mostrar</button>
 
             <p id="resultado_ej8"></p>
@@ -309,20 +309,21 @@
             const num1 = document.getElementById('ej8_num1').value * 1;
             const resultado = document.getElementById('resultado_ej8');
             resultado.textContent = '';
-
-            const primo = (num) => {
+            
+            const esPrimo = (num) => {
                 for (let i = 2; i < num; i++) {
                     if (num % i === 0) {
                         return false
                     }
-                    return 10 > 1
+                    return true
                 }
             }
-
             for (let x = 0; x <= num1; x++) {
-                (primo(x)) && (resultado.textContent = resultado.innerHTML + ' | ' + x);
+                esPrimo(x) && (resultado.textContent = resultado.innerHTML + ' | ' + x);
             }
+
         }
+
         const fraseEjercicio9 = () => {
             const nombre = document.getElementById('ej9_nombre').value,
                 apellido = document.getElementById('ej9_apellido').value,
@@ -334,10 +335,10 @@
         }
 
         const mostrarEjercicio10 = () => {
-            const num1 = document.getElementById('ej10_num1').value * 1, 
-                num2 = document.getElementById('ej10_num2').value * 1, 
+            const num1 = document.getElementById('ej10_num1').value * 1,
+                num2 = document.getElementById('ej10_num2').value * 1,
                 resultado = document.getElementById('resultado_ej10');
-                resultado.textContent = '';
+            resultado.textContent = '';
 
             let mayor, menor;
 
