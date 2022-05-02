@@ -129,8 +129,48 @@
 
             <label for="ej8_num1">Numero 1: </label>
             <input type="number" id="ej8_num1">
+            <button onclick="primosEjercicio8()">Mostrar</button>
+
+            <p id="resultado_ej8"></p>
 
         </div>
+        <div>
+            <h1>Ejercicio 9</h1>
+            <p>Ingresar un nombre, un apellido, una edad y un ciudad de nacimiento, crear un párrafo y completar la
+                siguiente frase:</p>
+            <p><i>"Mi nombre es NOMBRE APELLIDO, tengo EDAD años. Nací en la ciudad de CIUDAD."</i></p>
+
+            <label for="ej9_nombre">Nombre: </label>
+            <input type="text" id="ej9_nombre">
+            <label for="ej9_apellido">Apellido: </label>
+            <input type="text" id="ej9_apellido">
+            <label for="ej9_edad">Edad: </label>
+            <input type="number" id="ej9_edad">
+            <label for="ej9_ciudad">Ciudad: </label>
+            <input type="text" id="ej9_ciudad">
+
+            <button onclick="fraseEjercicio9()">Mostrar</button>
+
+            <p id="resultado_ej9"></p>
+
+        </div>
+
+        <div>
+            <h1>Ejercicio 10</h1>
+            <p>
+                Ingresar dos valores enteros y enumerar los elementos que los separan.
+            </p>
+            <label for="ej10_num1">Numero 1: </label>
+            <input type="number" id="ej10_num1">
+            <label for="ej10_num2">Numero 2: </label>
+            <input type="number" id="ej10_num2">
+
+            <button onclick="mostrarEjercicio10()">Mostrar</button>
+            <p id="resultado_ej10"></p>
+
+        </div>
+
+
     </div>
 
 
@@ -234,11 +274,11 @@
             }
         }
         //Ejercicio 7: Ingresar dos números y mostrar los múltiplos de 3 comprendidos entre ambos.
-        const multiplosEjercicio7 = ()=>{
+        const multiplosEjercicio7 = () => {
             const num1 = document.getElementById('ej7_num1').value * 1;
             const num2 = document.getElementById('ej7_num2').value * 1;
             const resultado = document.getElementById('resultado_ej7');
-            
+            resultado.textContent = '';
             let mayor, menor;
 
             // let dato1 = num1 % 3 , dato2 = num2 % 3
@@ -248,19 +288,71 @@
             //     resultado.textContent = `El numero ${num1} y el numero ${num2}, no son multiplos de 3`
             // }
 
-            if(num1 > num2) {
+            if (num1 > num2) {
                 mayor = num1;
                 menor = num2;
-            }else{
+            } else {
                 mayor = num2;
                 menor = num1;
             }
-            while(menor <= mayor){
+            while (menor <= mayor) {
                 let calculo = menor % 3;
-                if(calculo === 0){
-                    resultado.textContent = resultado.innerHTML + '/n ' + menor; 
+                if (calculo === 0) {
+                    resultado.textContent = resultado.innerHTML + ' | ' + menor;
                 }
                 menor++;
+            }
+        }
+
+        //Ejercicio 8: Mostrar los números primos hasta un número ingresado por el usuario.
+        const primosEjercicio8 = () => {
+            const num1 = document.getElementById('ej8_num1').value * 1;
+            const resultado = document.getElementById('resultado_ej8');
+            resultado.textContent = '';
+
+            const primo = (num) => {
+                for (let i = 2; i < num; i++) {
+                    if (num % i === 0) {
+                        return false
+                    }
+                    return 10 > 1
+                }
+            }
+
+            for (let x = 0; x <= num1; x++) {
+                (primo(x)) && (resultado.textContent = resultado.innerHTML + ' | ' + x);
+            }
+        }
+        const fraseEjercicio9 = () => {
+            const nombre = document.getElementById('ej9_nombre').value,
+                apellido = document.getElementById('ej9_apellido').value,
+                ciudad = document.getElementById('ej9_ciudad').value,
+                edad = document.getElementById('ej9_edad').value,
+                resultado = document.getElementById('resultado_ej9');
+
+            resultado.textContent = `Mi nombre es ${nombre} ${apellido}, tengo ${edad} años. Nací en la ciudad de ${ciudad}.`;
+        }
+
+        const mostrarEjercicio10 = () => {
+            const num1 = document.getElementById('ej10_num1').value * 1, 
+                num2 = document.getElementById('ej10_num2').value * 1, 
+                resultado = document.getElementById('resultado_ej10');
+                resultado.textContent = '';
+
+            let mayor, menor;
+
+            if (num1 > num2) {
+                mayor = num1;
+                menor = num2;
+            } else {
+                mayor = num2;
+                menor = num1;
+            }
+
+            for (let x = 0; x <= mayor; x++) {
+                if (x > menor && x < mayor) {
+                    resultado.textContent = resultado.innerHTML + ' | ' + x;
+                }
             }
         }
     </script>
