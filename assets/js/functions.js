@@ -1,38 +1,17 @@
 // Ejercicio 1: Compara entre 3 numero y determina cual es mayor y cual es menor
 const compararEjercicio1 = () => {
-  const num1 = document.getElementById("ej1-numero1").value * 1;
-  const num2 = document.getElementById("ej1-numero2").value * 1;
-  const num3 = document.getElementById("ej1-numero3").value * 1;
+  const num1 = document.getElementById('ej1-numero1').value * 1;
+  const num2 = document.getElementById('ej1-numero2').value * 1;
+  const num3 = document.getElementById('ej1-numero3').value * 1;
   const resultadoMayor = document.getElementById("resultadoMayor");
+  const resultadoMenor = document.getElementById("resultadoMenor")
 
-  const resultadoMenor = document.getElementById("resultadoMenor");
+  let mayor = Math.max(num1, num2, num3), 
+      menor = Math.min(num1, num2, num3);
 
-  if (num1 > num2 && num1 > num3) {
-    resultadoMayor.textContent = num1;
-    console.log(typeof num1);
-  }
-  if (num2 > num1 && num2 > num3) {
-    resultadoMayor.textContent = num2;
-    console.log(typeof num2);
-  }
-  if (num3 > num1 && num3 > num2) {
-    resultadoMayor.textContent = num3;
-    console.log(typeof num3);
-  }
-
-  if (num1 < num2 && num1 < num3) {
-    resultadoMenor.textContent = num1;
-    console.log(typeof num1);
-  }
-  if (num2 < num1 && num2 < num3) {
-    resultadoMenor.textContent = num2;
-    console.log(typeof num2);
-  }
-  if (num3 < num1 && num3 < num2) {
-    resultadoMenor.textContent = num3;
-    console.log(typeof num3);
-  }
-};
+  resultadoMayor.textContent = mayor;
+  resultadoMenor.textContent = menor;
+}
 
 // Ejercicio 2: Suma los 2 numeros
 const sumarEjercio2 = () => {
@@ -100,14 +79,6 @@ const multiplosEjercicio7 = () => {
   const num2 = document.getElementById("ej7_num2").value * 1;
   const resultado = document.getElementById("resultado_ej7");
   resultado.textContent = "";
-
-  // if (num1 > num2) {
-  //     mayor = num1;
-  //     menor = num2;
-  // } else {
-  //     mayor = num2;
-  //     menor = num1;
-  // }
 
   let menor = Math.min(num1, num2);
   let mayor = Math.max(num1, num2);
