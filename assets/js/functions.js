@@ -5,14 +5,13 @@ const compararEjercicio1 = () => {
   const num3 = document.getElementById('ej1-numero3').value * 1;
   const resultadoMayor = document.getElementById("resultadoMayor");
   const resultadoMenor = document.getElementById("resultadoMenor")
-
+  console.log(num1.innerHTML)
   let mayor = Math.max(num1, num2, num3), 
       menor = Math.min(num1, num2, num3);
 
   resultadoMayor.textContent = mayor;
   resultadoMenor.textContent = menor;
 }
-
 // Ejercicio 2: Suma los 2 numeros
 const sumarEjercio2 = () => {
   const num1 = document.getElementById("ej2_num1").value * 1;
@@ -31,7 +30,7 @@ const repetirEjer3 = () => {
 
   for (let i = 0; i < num1; i++) {
     resultadoEjer3.textContent =
-      resultadoEjer3.innerHTML + `${i + 1}- ${palabra} `;
+      resultadoEjer3.innerHTML + `${i + 1} - ${palabra} `;
   }
 };
 
