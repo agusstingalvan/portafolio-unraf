@@ -5,7 +5,6 @@ const compararEjercicio1 = () => {
   const num3 = document.getElementById('ej1-numero3').value * 1;
   const resultadoMayor = document.getElementById("resultadoMayor");
   const resultadoMenor = document.getElementById("resultadoMenor")
-  console.log(num1.innerHTML)
   let mayor = Math.max(num1, num2, num3), 
       menor = Math.min(num1, num2, num3);
 
