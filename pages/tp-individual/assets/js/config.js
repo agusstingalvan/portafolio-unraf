@@ -1,7 +1,8 @@
 import Menu from "./scenes/Menu.js";
 import Game from "./scenes/Game.js";
 import Win from "./scenes/Win.js";
-import GameOver from "./scenes/GameOver.js";
+// import GameOver from "./scenes/GameOver.js";
+
 
 export const config = {
     type: Phaser.AUTO,
@@ -14,5 +15,5 @@ export const config = {
             debug: false
         }
     },
-    scene: [Menu, Game, Win, GameOver]
+    scene: [Menu, Game, Win]
 }

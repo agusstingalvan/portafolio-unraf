@@ -8,7 +8,5 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         this.scene.physics.add.existing(this);
         this.setCollideWorldBounds(true);
         this.setBounce(0.5);
-
-        this.lives = 3;
     }
 }
