@@ -1,0 +1,62 @@
+{
+	"textures": [
+		{
+			"image": "backgorunds.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1600,
+				"h": 600
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "BackgroundCielo.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 800,
+						"h": 600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 800,
+						"h": 600
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 800,
+						"h": 600
+					}
+				},
+				{
+					"filename": "MenuBackground.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 800,
+						"h": 600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 800,
+						"h": 600
+					},
+					"frame": {
+						"x": 800,
+						"y": 0,
+						"w": 800,
+						"h": 600
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:02c412ebad74cc84a004819b8110a569:5654a817896c84f2edadb33e24bdeeba:4938e8529103a3e634dcac3f0e3fba71$"
+	}
+}
