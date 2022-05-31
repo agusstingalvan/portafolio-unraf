@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.5" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="64" tileheight="64" infinite="0" nextlayerid="7" nextobjectid="9">
+ <editorsettings>
+  <export target="nivel1.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="objetos" tilewidth="64" tileheight="64" tilecount="5" columns="5">
+  <image source="../../Atlas/atlas.png" width="320" height="64"/>
+ </tileset>
+ <tileset firstgid="6" name="backgorunds" tilewidth="64" tileheight="64" tilecount="225" columns="25">
+  <image source="../../Atlas/backgorunds.png" width="1600" height="600"/>
+ </tileset>
+ <layer id="1" name="Cielo" width="12" height="10">
+  <data encoding="csv">
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83,
+83,83,83,83,83,83,83,83,83,83,83,83
+</data>
+ </layer>
+ <layer id="4" name="Plataformas" width="12" height="10">
+  <properties>
+   <property name="collides" type="bool" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,3,3,3,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,3,3,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,3,3,0,
+0,0,0,0,0,0,0,3,0,0,0,0,
+0,0,0,0,0,0,3,0,0,0,0,0,
+4,4,4,4,4,4,4,4,4,4,4,4
+</data>
+ </layer>
+ <objectgroup id="5" name="Objetos">
+  <object id="1" name="zanahoria" type="zanahorias" x="105.333" y="289.333">
+   <point/>
+  </object>
+  <object id="2" name="zanahoria" type="zanahorias" x="640" y="364">
+   <point/>
+  </object>
+  <object id="3" name="zanahoria" type="zanahorias" x="418.667" y="166.667">
+   <point/>
+  </object>
+  <object id="5" name="player" x="38.6667" y="538.667"/>
+ </objectgroup>
+</map>
