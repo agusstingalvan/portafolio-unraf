@@ -3,8 +3,7 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"nivel1.json"
+         "format":"json"
         }
     },
  "height":10,
@@ -117,7 +116,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":9,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",

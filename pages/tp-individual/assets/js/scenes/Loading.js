@@ -13,7 +13,7 @@ export default class Loading extends Phaser.Scene {
     this.load.tilemapTiledJSON('map_nivel1', './assets/images/tilemaps/maps/nivel1.json');
     this.load.image('tiledBackgrounds', './assets/images/Atlas/backgorunds.png')
     this.load.image('tiledObjetos', './assets/images/Atlas/atlas.png')
-    this.load.image('zanahoria', './assets/images/Items/Zanahoria.png')
+    this.load.image('zanahoria', './assets/images/Items/ZanahoriaCoqueta.png')
     this.load.spritesheet("player-run", './assets/images/Player/RunSheet.png', {frameWidth: 64, frameHeight: 64})
     this.load.spritesheet("player-idle", './assets/images/Player/IdleSheet.png', {frameWidth: 64, frameHeight: 64})
   }
