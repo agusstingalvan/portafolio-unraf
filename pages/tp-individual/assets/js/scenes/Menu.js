@@ -43,7 +43,7 @@ export default class Menu extends Phaser.Scene {
             .setOrigin(0.5, 0.5);
         
         buttonPlay.setInteractive();
-        buttonPlay.on('pointerdown', ()=> this.scene.start('Loading'));
+        buttonPlay.on('pointerdown', ()=> this.scene.start('Game'));
 
     }
 }

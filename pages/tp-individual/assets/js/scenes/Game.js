@@ -11,7 +11,13 @@ export default class Game extends Phaser.Scene {
         this.tiempo = 30;
     }
     init() {
-        
+        this.cursors = this.input.keyboard.createCursorKeys();
+        this.KeySHIFT = this.input.keyboard.addKey(
+            Phaser.Input.Keyboard.KeyCodes.SHIFT
+        );
+        this.KeyR = this.input.keyboard.addKey(
+            Phaser.Input.Keyboard.KeyCodes.R
+        );
     }
     create() {
         this.add.image(0, 0, "BackgroundCielo").setOrigin(0);
@@ -184,14 +190,6 @@ export default class Game extends Phaser.Scene {
         });
 
         this.initSounds();
-
-        this.cursors = this.input.keyboard.createCursorKeys();
-        this.KeySHIFT = this.input.keyboard.addKey(
-            Phaser.Input.Keyboard.KeyCodes.SHIFT
-        );
-        this.KeyR = this.input.keyboard.addKey(
-            Phaser.Input.Keyboard.KeyCodes.R
-        );
     }
     update() {
         if (this.isGamerOver) {

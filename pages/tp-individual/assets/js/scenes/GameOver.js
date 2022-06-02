@@ -31,8 +31,5 @@ export default class GameOver extends Phaser.Scene {
 
         buttonPlay.setInteractive();
         buttonPlay.on("pointerdown", () => this.scene.start("Game"));
-        this.KeyR = this.input.keyboard.addKey(
-            Phaser.Input.Keyboard.KeyCodes.R
-        );
     }
 }
