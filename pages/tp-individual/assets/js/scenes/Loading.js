@@ -36,6 +36,7 @@ export default class Loading extends Phaser.Scene {
         this.load.audio("jumpSound", "./assets/sounds/Jump.mp3");
         this.load.audio("passLevel", "./assets/sounds/passLevel.mp3");
         this.load.audio("death", "./assets/sounds/death.mp3");
+        this.load.audio("pick", "./assets/sounds/pickup_coin.mp3");
     }
     create() {
         this.add

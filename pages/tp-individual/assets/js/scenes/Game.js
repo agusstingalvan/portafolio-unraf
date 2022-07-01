@@ -258,6 +258,7 @@ export default class Game extends Phaser.Scene {
             this.tiempo = 30;
         }
         if (this.bombs.countActive(true) >= 3) this.canWin = true;
+        this.pickSFX.play();
     }
     win() {
         this.scene.start("Win");
@@ -301,5 +302,6 @@ export default class Game extends Phaser.Scene {
         this.jumpSoundSFX = this.sound.add("jumpSound");
         this.passLevelSFX = this.sound.add("passLevel");
         this.deathSFX = this.sound.add("death");
+        this.pickSFX = this.sound.add("pick");
     }
 }
